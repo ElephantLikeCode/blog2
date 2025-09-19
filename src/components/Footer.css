@@ -250,6 +250,27 @@
   }
 }
 
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  .footer-link {
+    font-size: 0.95rem;
+    padding: 0 0.2rem;
+    margin: 0;
+    min-width: unset;
+    white-space: nowrap;
+  }
+}
+
 /* Hover Effects */
 .footer-section:hover .footer-title {
   animation: titleGlow 0.5s ease;
