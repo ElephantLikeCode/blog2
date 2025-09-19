@@ -1,8 +1,20 @@
 @import './cyber-theme.css';
 
 html, body {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+#root, .container, main, section, header, footer {
   max-width: 100vw;
   overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box !important;
 }
 
 body {
@@ -45,6 +57,18 @@ button:focus-visible {
 }
 
 @media (max-width: 600px) {
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+  }
   .section-title, .neon-text, h2, h3 {
     font-size: 1.2rem !important;
     text-align: left;
