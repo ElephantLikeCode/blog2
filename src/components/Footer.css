@@ -1,0 +1,265 @@
+.cyber-footer {
+  background: linear-gradient(135deg, var(--cyber-bg) 0%, var(--cyber-bg-secondary) 100%);
+  border-top: 2px solid var(--cyber-neon-cyan);
+  padding: 3rem 0 1rem 0;
+  position: relative;
+  margin-top: 4rem;
+}
+
+.cyber-footer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--cyber-neon-cyan), 
+    var(--cyber-neon-purple), 
+    var(--cyber-neon-green),
+    transparent
+  );
+  animation: footerBorderFlow 4s linear infinite;
+}
+
+@keyframes footerBorderFlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-title {
+  color: var(--cyber-neon-cyan);
+  font-size: 1.1rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--cyber-neon-purple);
+}
+
+.footer-description {
+  color: var(--cyber-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link {
+  color: var(--cyber-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  position: relative;
+  width: fit-content;
+}
+
+.footer-link::before {
+  content: '> ';
+  color: var(--cyber-neon-green);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer-link:hover::before {
+  opacity: 1;
+}
+
+.footer-link:hover {
+  color: var(--cyber-neon-cyan);
+  text-shadow: 0 0 5px currentColor;
+  transform: translateX(10px);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cyber-text-secondary);
+  font-size: 0.9rem;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+}
+
+.contact-text {
+  color: var(--cyber-text-secondary);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--cyber-border-primary), 
+    var(--cyber-neon-cyan), 
+    var(--cyber-border-primary), 
+    transparent
+  );
+  margin-bottom: 1.5rem;
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright p {
+  color: var(--cyber-text-dim);
+  margin: 0;
+  font-size: 0.8rem;
+  font-family: 'Courier New', monospace;
+}
+
+.tech-stack {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-item {
+  color: var(--cyber-neon-green);
+  font-size: 0.8rem;
+  font-family: 'Courier New', monospace;
+  background: rgba(0, 255, 65, 0.1);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--cyber-neon-green);
+  border-radius: 2px;
+}
+
+.tech-separator {
+  color: var(--cyber-text-dim);
+  font-size: 0.8rem;
+}
+
+/* Scanning Effect */
+.cyber-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.02) 50%,
+    transparent 100%
+  );
+  animation: footerScan 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes footerScan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .cyber-footer {
+    padding: 2rem 0 1rem 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .footer-copyright {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .tech-stack {
+    justify-content: center;
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+  
+  .contact-info {
+    align-items: center;
+  }
+}
+
+/* Hover Effects */
+.footer-section:hover .footer-title {
+  animation: titleGlow 0.5s ease;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+  }
+}

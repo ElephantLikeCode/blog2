@@ -1,0 +1,44 @@
+/* App Container */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Layout Styles */
+.main-content {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
